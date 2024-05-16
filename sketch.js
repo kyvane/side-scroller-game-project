@@ -43,15 +43,15 @@ function init(){
 
 function preload(){
 	soundFormats("mp3", "wav");
-	sound_bgm = loadSound("audio assets/bgm.mp3")
+	sound_bgm = loadSound("audio-assets/bgm.mp3")
 	sound_bgm.setVolume(0.03);
-	sound_walk = loadSound("audio assets/walk.wav")
+	sound_walk = loadSound("audio-assets/walk.wav")
 	sound_walk.setVolume(0.4);
-	sound_collect = loadSound("audio assets/collect.wav")
+	sound_collect = loadSound("audio-assets/collect.wav")
 	sound_collect.setVolume(0.2);
-	sound_jump = loadSound("audio assets/jump.wav")
+	sound_jump = loadSound("audio-assets/jump.wav")
 	sound_jump.setVolume(0.2);
-	sound_fall = loadSound("audio assets/fall.wav")
+	sound_fall = loadSound("audio-assets/fall.wav")
 	sound_fall.setVolume(0.2);
 }
 
