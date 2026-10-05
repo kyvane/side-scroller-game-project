@@ -237,5 +237,9 @@ function keyReleased() {
 		isRight = false;
 		sound_walk.stop();
 	}
+<<<<<<< HEAD
+}
+>>>>>>> parent of 77c92c5 (Update sketch.js)
+=======
 }
 >>>>>>> parent of 77c92c5 (Update sketch.js)
