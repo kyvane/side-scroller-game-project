@@ -1,4 +1,4 @@
-# Side Scroller
+# Side Scroller Game
 
 A browser side-scrolling game built with p5.js. Walk through the mountains, jump across canyons and onto platforms, collect gems, avoid enemies, and reach your camp.
 
