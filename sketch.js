@@ -8,6 +8,31 @@ var gameChar_y;
 var floorPos_y;
 var gameOver;
 
+function createGameSound(src, volume) {
+	var audio = new Audio(src);
+	audio.preload = "auto";
+	audio.volume = volume;
+	return {
+		loop: function () {
+			audio.loop = true;
+			if (audio.paused) {
+				var pending = audio.play();
+				if (pending && pending.catch) pending.catch(function () {});
+			}
+		},
+		play: function () {
+			var voice = audio.cloneNode();
+			voice.volume = audio.volume;
+			var pending = voice.play();
+			if (pending && pending.catch) pending.catch(function () {});
+		},
+		stop: function () {
+			audio.pause();
+			audio.currentTime = 0;
+		}
+	};
+}
+
 function setup(){
 	pixelDensity(2);
 	createCanvas(1200, 600);
@@ -16,6 +41,12 @@ function setup(){
 	gameOver = false;
 	sound_bgm.loop();
 	init();
+}
+
+function startBgmAfterGesture() {
+	sound_bgm.loop();
+	window.removeEventListener("keydown", startBgmAfterGesture);
+	window.removeEventListener("pointerdown", startBgmAfterGesture);
 }
 
 function init(){
@@ -42,17 +73,11 @@ function init(){
 }
 
 function preload(){
-	soundFormats("mp3", "wav");
-	sound_bgm = loadSound("audio-assets/bgm.mp3")
-	sound_bgm.setVolume(0.03);
-	sound_walk = loadSound("audio-assets/walk.wav")
-	sound_walk.setVolume(0.4);
-	sound_collect = loadSound("audio-assets/collect.wav")
-	sound_collect.setVolume(0.2);
-	sound_jump = loadSound("audio-assets/jump.wav")
-	sound_jump.setVolume(0.2);
-	sound_fall = loadSound("audio-assets/fall.wav")
-	sound_fall.setVolume(0.2);
+	sound_bgm = createGameSound("audio-assets/bgm.mp3", 0.03);
+	sound_walk = createGameSound("audio-assets/walk.wav", 0.4);
+	sound_collect = createGameSound("audio-assets/collect.wav", 0.2);
+	sound_jump = createGameSound("audio-assets/jump.wav", 0.2);
+	sound_fall = createGameSound("audio-assets/fall.wav", 0.2);
 }
 
 function draw()
