@@ -73,7 +73,7 @@ function init(){
 }
 
 function preload(){
-	sound_bgm = createGameSound("audio-assets/bgm.mp3", 0.03);
+	sound_bgm = createGameSound("audio-assets/bgm.wav", 0.4);
 	sound_walk = createGameSound("audio-assets/walk.wav", 0.4);
 	sound_collect = createGameSound("audio-assets/collect.wav", 0.2);
 	sound_jump = createGameSound("audio-assets/jump.wav", 0.2);
