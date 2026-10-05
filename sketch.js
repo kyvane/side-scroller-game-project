@@ -41,6 +41,7 @@ function init() {
   cameraPosX = 0;
 }
 
+<<<<<<< HEAD
 function preload() {
   soundFormats("mp3", "wav");
   sound_bgm = loadSound("audio assets/bgm.mp3");
@@ -53,6 +54,20 @@ function preload() {
   sound_jump.setVolume(0.2);
   sound_fall = loadSound("audio assets/fall.wav");
   sound_fall.setVolume(0.2);
+=======
+function preload(){
+	soundFormats("mp3", "wav");
+	sound_bgm = loadSound("audio assets/bgm.mp3")
+	sound_bgm.setVolume(0.03);
+	sound_walk = loadSound("audio assets/walk.wav")
+	sound_walk.setVolume(0.4);
+	sound_collect = loadSound("audio assets/collect.wav")
+	sound_collect.setVolume(0.2);
+	sound_jump = loadSound("audio assets/jump.wav")
+	sound_jump.setVolume(0.2);
+	sound_fall = loadSound("audio assets/fall.wav")
+	sound_fall.setVolume(0.2);
+>>>>>>> parent of 77c92c5 (Update sketch.js)
 }
 
 function draw() {
@@ -209,9 +224,18 @@ function keyReleased() {
     sound_walk.stop();
   }
 
+<<<<<<< HEAD
   if (keyCode == 68 || keyCode == 39) {
     console.log("move right release");
     isRight = false;
     sound_walk.stop();
   }
 }
+=======
+	if(keyCode == 68 || keyCode == 39){
+		console.log("move right release")
+		isRight = false;
+		sound_walk.stop();
+	}
+}
+>>>>>>> parent of 77c92c5 (Update sketch.js)
